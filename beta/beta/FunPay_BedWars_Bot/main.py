@@ -389,7 +389,12 @@ def main():
     print(f"[ℹ️ Info] Интервал проверки: {check_interval} сек.")
     print(f"[ℹ️ Info] Пинг участников: '{ping_text}'")
     print(f"[ℹ️ Info] Ранее просмотренных лотов в базе: {len(seen_lots)}")
-    print("\n[🔄] Бот запущен и отслеживает FunPay...\n")
+    proxy_val = os.getenv("PROXY_URL", "").strip() or os.getenv("FUNPAY_PROXY", "").strip()
+    if proxy_val:
+        print(f"[🛡️ Proxy] Прокси активен: {proxy_val.split('@')[-1]} ✅", flush=True)
+    else:
+        print("[⚠️ Proxy] Прокси НЕ ОБНАРУЖЕН в переменных окружения! (Прямое подключение к FunPay)", flush=True)
+    print("\n[🔄] Бот запущен и отслеживает FunPay...\n", flush=True)
 
     is_first_check = True
 
