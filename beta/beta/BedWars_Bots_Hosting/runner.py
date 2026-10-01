@@ -46,17 +46,27 @@ web_thread = threading.Thread(target=run_healthcheck_server, daemon=True)
 web_thread.start()
 
 # Launch FunPay Bot
-p1 = subprocess.Popen([sys.executable, "FunPay_BedWars_Bot/main.py"])
-print("[✅ Process] FunPay BedWars Bot started (PID: %d)" % p1.pid)
+funpay_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "FunPay_BedWars_Bot")
+p1 = subprocess.Popen(
+    [sys.executable, "-u", "main.py"],
+    cwd=funpay_dir,
+    env=dict(os.environ, PYTHONUNBUFFERED="1")
+)
+print("[✅ Process] FunPay BedWars Bot started (PID: %d)" % p1.pid, flush=True)
 
 # Launch Playerok Bot
-p2 = subprocess.Popen([sys.executable, "Playerok_BedWars_Bot/main.py"])
-print("[✅ Process] Playerok BedWars Bot started (PID: %d)" % p2.pid)
+playerok_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "Playerok_BedWars_Bot")
+p2 = subprocess.Popen(
+    [sys.executable, "-u", "main.py"],
+    cwd=playerok_dir,
+    env=dict(os.environ, PYTHONUNBUFFERED="1")
+)
+print("[✅ Process] Playerok BedWars Bot started (PID: %d)" % p2.pid, flush=True)
 
 try:
     p1.wait()
     p2.wait()
 except KeyboardInterrupt:
-    print("\n[ℹ️ Info] Stopping bots...")
+    print("\n[ℹ️ Info] Stopping bots...", flush=True)
     p1.terminate()
     p2.terminate()
