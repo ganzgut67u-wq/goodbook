@@ -1,0 +1,2 @@
+# FunPay BedWars Bot uses standard library only (Python 3.8+).
+# No external pip dependencies required!

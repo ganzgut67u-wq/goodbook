@@ -1,0 +1,50 @@
+=======================================================
+  FunPay BedWars Auto-Notifier Bot
+=======================================================
+
+=================================================================
+ 🚀 FunPay & Playerok BedWars Discord Auto-Notifier Bot v2.0
+=================================================================
+
+[ℹ️ Info] Отслеживаемые категории FunPay: https://funpay.com/lots/401/, https://funpay.com/lots/402/
+[ℹ️ Info] Отслеживание Playerok: https://playerok.com/roblox/accounts?games=bedwars ✅
+[ℹ️ Info] Ключевые слова: bedwars, бедварс, bed wars, бед варс
+[ℹ️ Info] Фильтр 'Только Аккаунты': Включен ✅
+[ℹ️ Info] Интервал проверки: 15 сек.
+[ℹ️ Info] Пинг участников: '@everyone'
+[ℹ️ Info] Ранее просмотренных лотов в базе: 4
+
+[🔄] Бот запущен и отслеживает FunPay + Playerok...
+
+[19:40:16] ⚡ НАЙДЕН АКТИВНЫЙ АККАУНТ (Playerok)! ID: playerok_1f17e1d9-4ce3-6790-438d-ba8fb0976929 | 90 ₽ | Tebi235
+         Ссылка: https://playerok.com/products/ba8fb0976929-rp-dlyaya-bedvarsa-115-119
+         Заголовок: РП дляя бедварса 1.15-1.19...
+         [✅] Уведомление отправлено в Discord!
+[19:40:16] ⚡ НАЙДЕН АКТИВНЫЙ АККАУНТ (Playerok)! ID: playerok_1f1906d6-a6e8-6920-bc4c-181fee86e951 | 389 ₽ | Bezdar578
+         Ссылка: https://playerok.com/products/181fee86e951-akkaunt-v-robloks-dlya-bedvarsa-i-dlya-pet-simulyator
+         Заголовок: Аккаунт в роблокс для бедварса и для пет симулятор...
+         [✅] Уведомление отправлено в Discord!
+[19:40:16] ⚡ НАЙДЕН АКТИВНЫЙ АККАУНТ (Playerok)! ID: playerok_1f193c4a-95ec-6730-4c46-0900a7348825 | 1150 ₽ | Sallovloh
+         Ссылка: https://playerok.com/products/0900a7348825-akkaunt-vip-3-skayblok-luchshe-dom-vapshe-bogat
+         Заголовок: Аккаунт вип 3 скайблок лучше придмети одежди бедварс все ест вапше богат...
+         [✅] Уведомление отправлено в Discord!
+[19:40:16] ⚡ НАЙДЕН АКТИВНЫЙ АККАУНТ (Playerok)! ID: playerok_1f176375-ac73-66c0-e636-e4e6bcb60ca9 | 450 ₽ | Slipknotik
+         Ссылка: https://playerok.com/products/e4e6bcb60ca9-dadadadadad
+         Заголовок: 💥АКК С 9600 КИЛЛОВ НА BEDWARS💥АВТОВЫДАЧА...
+         [✅] Уведомление отправлено в Discord!
+[19:40:16] ⚡ НАЙДЕН АКТИВНЫЙ АККАУНТ (Playerok)! ID: playerok_1f19488e-a8b5-6920-e504-77191dcc7406 | 135 ₽ | piepl24
+         Ссылка: https://playerok.com/products/77191dcc7406-sigma-bedwars-fund----fond-rosta-bedwars-5
+         Заголовок: SIGMA bedwars FUND — Фонд Роста bedwars (+5%) 🚀🔥...
+         [✅] Уведомление отправлено в Discord!
+[19:40:16] ⚡ НАЙДЕН АКТИВНЫЙ АККАУНТ (Playerok)! ID: playerok_1f194c46-6e87-6fd0-fb43-b11a1c76ab45 | 116 ₽ | SellerRussauto
+         Ссылка: https://playerok.com/products/b11a1c76ab45-fond-rosta-bedwarspo-id-chek-opisanie
+         Заголовок: 🔥Фонд Роста BedWars🔥По ID + чек описание...
+         [✅] Уведомление отправлено в Discord!
+[19:40:16] ⚡ НАЙДЕН АКТИВНЫЙ АККАУНТ (FunPay)! ID: 74767976 | 19.99 € | solsticewww
+         Ссылка: https://funpay.com/lots/offer?id=74767976
+         Заголовок: 🐥ПРОДАМ АККАУНТ С ДОН СКИНОМ КОТОРЫЙ ПРОКАЧАН В БФ ТСБ РИВАЛС И РОБЛОКС БЕДВАРС🐥...
+         [✅] Уведомление отправлено в Discord!
+[19:40:16] [ℹ️ Первичная проверка] Просканировано 8026 лотов (FunPay + Playerok). Найдено 7 АККАУНТОВ BedWars.
+[19:40:52] 🔍 Проверка завершена. Новых аккаунтов не найдено. (Активных аккаунтов: 7)
+[19:41:16] 🔍 Проверка завершена. Новых аккаунтов не найдено. (Активных аккаунтов: 7)
+[19:41:40] 🔍 Проверка завершена. Новых аккаунтов не найдено. (Активных аккаунтов: 7)

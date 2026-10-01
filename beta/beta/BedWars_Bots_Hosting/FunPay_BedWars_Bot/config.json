@@ -1,0 +1,20 @@
+{
+  "discord_webhook_url": "https://discord.com/api/webhooks/1536331234219655280/yIIuWfDczt-R9KzL3vNYEvgy2_zA3m2wi6Mto5-703vMSN_MO3yFkoMe9dS7dO_Vt5Tx",
+  "discord_ping": "@everyone",
+  "check_interval_seconds": 15,
+  "keywords": [
+    "bedwars",
+    "бедварс",
+    "bed wars",
+    "бед варс"
+  ],
+  "category_urls": [
+    "https://funpay.com/lots/401/",
+    "https://funpay.com/lots/402/"
+  ],
+  "first_run_notify_existing": true,
+  "max_price": 0.0,
+  "min_price": 0.0,
+  "auto_delivery_only": false,
+  "accounts_only": true
+}

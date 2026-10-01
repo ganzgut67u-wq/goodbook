@@ -1,0 +1,17 @@
+{
+  "discord_webhook_url": "https://discord.com/api/webhooks/1536331234219655280/yIIuWfDczt-R9KzL3vNYEvgy2_zA3m2wi6Mto5-703vMSN_MO3yFkoMe9dS7dO_Vt5Tx",
+  "discord_ping": "@everyone",
+  "check_interval_seconds": 15,
+  "keywords": [
+    "bedwars",
+    "бедварс",
+    "bed wars",
+    "бед варс"
+  ],
+  "playerok_url": "https://playerok.com/roblox/accounts?games=bedwars",
+  "first_run_notify_existing": true,
+  "max_price": 0.0,
+  "min_price": 0.0,
+  "accounts_only": true,
+  "exclude_rentals": true
+}

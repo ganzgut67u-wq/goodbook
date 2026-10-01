@@ -1,0 +1,2 @@
+# Zero third-party dependencies required!
+# Standard Python 3.8+ (urllib, json, re, os, time, datetime, sys)
