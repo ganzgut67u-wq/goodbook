@@ -17,9 +17,6 @@ import re
 from datetime import datetime, timezone
 from html.parser import HTMLParser
 
-_cookie_jar = http.cookiejar.CookieJar()
-_funpay_opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(_cookie_jar))
-
 # Reconfigure stdout for Windows console UTF-8 support
 if sys.platform == "win32":
     try:
@@ -51,6 +48,41 @@ def load_env():
 
 load_env()
 
+_cookie_jar = http.cookiejar.CookieJar()
+
+
+def format_proxy_url(raw_proxy):
+    if not raw_proxy:
+        return None
+    raw_proxy = raw_proxy.strip()
+    if raw_proxy.startswith("http://") or raw_proxy.startswith("https://") or raw_proxy.startswith("socks5://"):
+        return raw_proxy
+    parts = raw_proxy.split(":")
+    if len(parts) == 4:
+        ip, port, user, pwd = parts
+        return f"http://{user}:{pwd}@{ip}:{port}"
+    elif len(parts) == 2:
+        ip, port = parts
+        return f"http://{ip}:{port}"
+    return f"http://{raw_proxy}"
+
+
+def get_opener():
+    handlers = [urllib.request.HTTPCookieProcessor(_cookie_jar)]
+    proxy_str = os.getenv("PROXY_URL", "").strip() or os.getenv("FUNPAY_PROXY", "").strip()
+    formatted_proxy = format_proxy_url(proxy_str)
+    if formatted_proxy:
+        print(f"[🛡️ Proxy] Использование прокси для FunPay: {formatted_proxy.split('@')[-1]} ✅")
+        proxy_handler = urllib.request.ProxyHandler({
+            'http': formatted_proxy,
+            'https': formatted_proxy
+        })
+        handlers.append(proxy_handler)
+    return urllib.request.build_opener(*handlers)
+
+
+_funpay_opener = get_opener()
+
 # Configuration Files
 CONFIG_FILE = "config.json"
 SEEN_FILE = "seen_lots.json"
@@ -58,6 +90,7 @@ SEEN_FILE = "seen_lots.json"
 DEFAULT_CONFIG = {
     "discord_webhook_url": os.getenv("DISCORD_WEBHOOK_URL", ""),
     "discord_ping": os.getenv("DISCORD_PING", "@everyone"),
+    "proxy_url": os.getenv("PROXY_URL", ""),
     "check_interval_seconds": int(os.getenv("CHECK_INTERVAL_SECONDS", 15)),
     "keywords": ["bedwars", "бедварс", "bed wars", "бед варс"],
     "category_urls": [
