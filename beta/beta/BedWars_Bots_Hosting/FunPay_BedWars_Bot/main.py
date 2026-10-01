@@ -12,9 +12,13 @@ import time
 import json
 import urllib.request
 import urllib.parse
+import http.cookiejar
 import re
 from datetime import datetime, timezone
 from html.parser import HTMLParser
+
+_cookie_jar = http.cookiejar.CookieJar()
+_funpay_opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(_cookie_jar))
 
 # Reconfigure stdout for Windows console UTF-8 support
 if sys.platform == "win32":
@@ -186,14 +190,26 @@ def save_seen_lots(seen_set):
 
 def fetch_funpay_lots(category_url):
     headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
-        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
-        'Accept-Language': 'ru-RU,ru;q=0.9,en-US;q=0.8',
-        'Cache-Control': 'no-cache'
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36',
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8',
+        'Accept-Language': 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7',
+        'Cookie': 'locale=ru; cy=rub',
+        'Referer': 'https://funpay.com/'
     }
-    req = urllib.request.Request(category_url, headers=headers)
-    with urllib.request.urlopen(req, timeout=12) as response:
-        html_content = response.read().decode('utf-8')
+    
+    html_content = ""
+    try:
+        req = urllib.request.Request(category_url, headers=headers)
+        with _funpay_opener.open(req, timeout=15) as response:
+            html_content = response.read().decode('utf-8', errors='ignore')
+    except urllib.error.HTTPError as e:
+        if e.code == 404 and '/lots/' in category_url:
+            alt_url = category_url.replace('https://funpay.com/lots/', 'https://funpay.com/en/lots/')
+            req_alt = urllib.request.Request(alt_url, headers=headers)
+            with _funpay_opener.open(req_alt, timeout=15) as response:
+                html_content = response.read().decode('utf-8', errors='ignore')
+        else:
+            raise
     
     parser = FunPayLotParser()
     parser.feed(html_content)

@@ -14,6 +14,13 @@ import threading
 import http.server
 import socketserver
 
+# Reconfigure stdout for UTF-8 support
+if hasattr(sys.stdout, 'reconfigure'):
+    try:
+        sys.stdout.reconfigure(encoding='utf-8')
+    except Exception:
+        pass
+
 
 def run_healthcheck_server():
     """Lightweight HTTP Server so Render Web Services detect an open port."""
